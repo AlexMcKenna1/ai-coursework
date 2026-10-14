@@ -27,6 +27,7 @@ class State:
                 raise ValueError("Invalid Grid Size")
 
         self.grid = [row[:] for row in grid] # copying each row
+        
 
     def __str__(self): # returns the grid as rows of numbers separated by spaces
 
@@ -39,3 +40,25 @@ class State:
             lines.append(" ".join(cells))
 
         return "\n".join(lines)
+    
+
+    def letter_to_cell(self, letter): # converts move letter to (row, col)
+        index = ord(letter) - ord('A') # gets index as number code 'A' is just zero
+        row = index // COLS
+        col = index % COLS
+        return (row, col)
+
+
+    def move(self, letter): # removes one from the cell named by letter
+
+        if len(letter) != 1 or letter not in "ABCDEFGHIJKLMNOPQRSTUVWXY": # checks for valid letter, no Z thats index 25 off board
+            raise ValueError("Invalid Move")
+        
+        row, col = self.letter_to_cell(letter)
+
+        if not self.grid[row][col]: # empty cell check
+            raise ValueError("Invalid Grid Cell")
+
+        self.grid[row][col] -= 1
+
+        
