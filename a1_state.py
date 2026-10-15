@@ -27,7 +27,7 @@ class State:
                 raise ValueError("Invalid Grid Size")
 
         self.grid = [row[:] for row in grid] # copying each row
-        
+
 
     def __str__(self): # returns the grid as rows of numbers separated by spaces
 
@@ -61,4 +61,13 @@ class State:
 
         self.grid[row][col] -= 1
 
+
+    def successors(self): # yields all states reachable in one move
+
+        for row in range(ROWS):
+            for col in range(COLS):
+                if self.grid[row][col] > 0: # only active cells check
+                    child = State(self.grid) # its own copy
+                    child.grid[row][col] -= 1
+                    yield child
         
