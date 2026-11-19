@@ -118,7 +118,10 @@ class State:
 def tester():  # main test harness
 
     def check(label, expected, result):  # helper function to provide test results
-        status = "PASS" if expected == result else "FAIL"
+        if expected == result:
+            status = "PASS"
+        else:
+            status = "FAIL"
         print("{} | {}: expected {}, got {}".format(status, label, expected, result))
 
     s1_grid = [[1, 1, 0, 0, 1],
@@ -176,6 +179,7 @@ def tester():  # main test harness
     check("Number of hingers", 2, sa.numHingers())
     sa.move("T")
     check("Number of hingers after performing move (3,4)", 3, sa.numHingers())
+
 
 if __name__ == "__main__":
     tester()

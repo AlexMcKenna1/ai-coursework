@@ -163,11 +163,8 @@ class Agent:
         return best_letter
 
 
-    
-
-    
-#Testing method
-if __name__ == "__main__": #runs only when this file(a2_agent) is run directly
+# Testing method
+if __name__ == "__main__": # runs only when this file(a2_agent) is run directly
     agent = Agent()
     print(agent)
 
