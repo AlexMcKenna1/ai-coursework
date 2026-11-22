@@ -68,7 +68,6 @@ class Agent:
         new_board.move(letter)         
         return new_board
 
-
     def _minimax(self, state, depth, my_turn, gap):  # returns the best gap reachable from this point
         self.nodes += 1  
         moves = self._legal_moves(state)
