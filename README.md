@@ -1,3 +1,8 @@
 # ai-coursework
-lol
-wassup
+
+Each group member must take 10 pictures of each ASL alphabet sign.
+
+Name each file in this format:
+{Student ID}_{ASL Letter}_{picture number}
+
+Need to make a separate folder for each letter
