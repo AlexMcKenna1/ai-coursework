@@ -4,7 +4,7 @@ Coursework 001 for: CMP-6058A Artificial Intelligence
 
 Includes a Agent class for Task 2
 
-@author: <group number> (<your ID>, <partner ID>, <partner ID>, <partner ID>)
+@author: <B07> (100475742, 100174060, 100464504, 100481021)
 @date:   22/10/2026
 """
 
@@ -15,7 +15,6 @@ import random
 
 class _MCTSNode:
     """One position in the Monte Carlo search tree."""
-
     def __init__(self, state, moves, player_to_move, score_gap,
                  parent=None, move=None):
         self.state = state
@@ -30,7 +29,7 @@ class _MCTSNode:
         
 class Agent: 
 
-    def __init__(self, name="A9"): 
+    def __init__(self, name="B07"): 
         self.name = name
         self.modes = ["minimax", "alphabeta", "mcts"]
         self.nodes = 0  #counts how many boards the agent looks at
